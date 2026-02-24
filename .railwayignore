@@ -1,0 +1,17 @@
+docs
+__checks__
+example-apps
+.github
+*.md
+!README.md
+!packages/**/*.md
+specs
+playwright.config.ts
+vitest.config.mts
+vitest.workspace.ts
+biome.json
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+PERMISSIONS.md
+SPEC-WORKFLOW.md
+LICENSE
