@@ -34,7 +34,7 @@ ENV NEXT_PUBLIC_WEBAPP_URL=http://NEXT_PUBLIC_WEBAPP_URL_PLACEHOLDER \
   BUILD_STANDALONE=true \
   CSP_POLICY=$CSP_POLICY
 
-ARG CACHE_BUST=1
+ARG CACHE_BUST=2
 COPY package.json yarn.lock .yarnrc.yml playwright.config.ts turbo.json i18n.json ./
 COPY .yarn ./.yarn
 COPY apps/web ./apps/web
