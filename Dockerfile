@@ -13,6 +13,8 @@ ARG CALENDSO_ENCRYPTION_KEY=secret
 ARG MAX_OLD_SPACE_SIZE=6144
 ARG NEXT_PUBLIC_API_V2_URL
 ARG CSP_POLICY
+ARG MWAI_APP_ID
+ARG MWAI_API_KEY
 
 ## We need these variables as required by Next.js build to create rewrites
 ARG NEXT_PUBLIC_SINGLE_ORG_SLUG
@@ -32,9 +34,9 @@ ENV NEXT_PUBLIC_WEBAPP_URL=http://NEXT_PUBLIC_WEBAPP_URL_PLACEHOLDER \
   ORGANIZATIONS_ENABLED=$ORGANIZATIONS_ENABLED \
   NODE_OPTIONS=--max-old-space-size=${MAX_OLD_SPACE_SIZE} \
   BUILD_STANDALONE=true \
-  CSP_POLICY=$CSP_POLICY
-
-ARG CACHE_BUST=3
+  CSP_POLICY=$CSP_POLICY \
+  MWAI_APP_ID=$MWAI_APP_ID \
+  MWAI_API_KEY=$MWAI_API_KEY
 COPY package.json yarn.lock .yarnrc.yml playwright.config.ts turbo.json i18n.json ./
 COPY .yarn ./.yarn
 COPY apps/web ./apps/web
